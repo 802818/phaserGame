@@ -124,7 +124,7 @@ function update() {
     game.physics.arcade.overlap(Button, box, pressed, null, this);
     game.physics.arcade.overlap(Button, player, pressed, null, this);
     
-    
+    pressed(Button, player);
     tick++;
     
     
@@ -218,8 +218,15 @@ function pressed (Button, player) {
     console.log("hiiiiiii");
         press = true;
     }
+    
+    else if (press == false && game.physics.arcade.overlap(Button, box)) {
+    Button.frame = 1;
+    console.log("hiiiiiii");
+        press = true;
+    }
     else {
         press = false;
+        Button.frame = 0;
     }
 }
 
