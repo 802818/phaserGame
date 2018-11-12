@@ -3,7 +3,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create
 
 function preload() {
     game.load.audio('sfx:alert', 'assets/alert2.wav');
-    //game.load.audio('bgm:mm2Theme', 'assets/backgroundMusic.mp3');
+    game.load.audio('bgm:mm2Theme', 'assets/backgroundMusic.mp3');
     game.load.image('sky', 'assets/sky.png');
     game.load.image('city', 'assets/cityAllOn.png');
     game.load.image('ground', 'assets/platform.png');
@@ -105,9 +105,9 @@ function create() {
 
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
-    //music = game.add.audio('bgm:mm2Theme');
+    music = game.add.audio('bgm:mm2Theme');
     sound = game.add.audio('sfx:alert');    
-   // music.play();
+    music.play();
     
      
 }
